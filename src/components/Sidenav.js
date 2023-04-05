@@ -5,6 +5,7 @@ import {
     faHome,
     faListCheck,
     faTableColumns,
+    faTimes,
     faUserAlt,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -18,21 +19,40 @@ export default function Sidenav() {
     const { student, admin } = useSelector((state) => state.user)
     const navigate = useNavigate()
     const route = window.location.pathname
+    const { innerWidth } = window
+
+    function handleSideNav() {
+        let sidenav = document.getElementById("Sidenav")
+        if (innerWidth <= 768) {
+            sidenav.style.display = "none"
+        }
+    }
 
     if (student) {
         return (
-            <div className="Student-sidenav">
+            <div id="Sidenav" className="Student-sidenav">
                 <div className="sidenav-cont">
-                    <img
-                        className="logo"
-                        src="/images/blue-logo.svg"
-                        alt="logo"
-                    />
+                    <div className="logo-close">
+                        <img
+                            className="logo"
+                            src="/images/blue-logo.svg"
+                            alt="logo"
+                        />
+                        <FontAwesomeIcon
+                            className="nav-close"
+                            onClick={handleSideNav}
+                            icon={faTimes}
+                            style={{ color: "#3a21b6" }}
+                        />
+                    </div>
                     <div
                         className={
                             route !== "/user" ? "nav-btn" : "nav-btn-selected"
                         }
-                        onClick={() => navigate("/user")}
+                        onClick={() => {
+                            navigate("/user")
+                            handleSideNav()
+                        }}
                     >
                         <FontAwesomeIcon icon={faHome} />
                         <span>Dashboard</span>
@@ -43,7 +63,10 @@ export default function Sidenav() {
                                 ? "nav-btn"
                                 : "nav-btn-selected"
                         }
-                        onClick={() => navigate("/user/complaint")}
+                        onClick={() => {
+                            navigate("/user/complaint")
+                            handleSideNav()
+                        }}
                     >
                         <FontAwesomeIcon icon={faListCheck} />
                         <span>Complaints</span>
@@ -73,15 +96,25 @@ export default function Sidenav() {
     }
     if (admin) {
         return (
-            <div className="Sidenav">
+            <div id="Sidenav" className="Sidenav">
                 <div className="sidenav-cont">
-                    <img
-                        className="logo"
-                        src="/images/white-sidenav-logo.svg"
-                        alt="logo"
-                    />
+                    <div className="logo-close">
+                        <img
+                            className="logo"
+                            src="/images/white-sidenav-logo.svg"
+                            alt="logo"
+                        />
+                        <FontAwesomeIcon
+                            className="nav-close"
+                            onClick={handleSideNav}
+                            icon={faTimes}
+                        />
+                    </div>
                     <div
-                        onClick={() => navigate("/user")}
+                        onClick={() => {
+                            navigate("/user")
+                            handleSideNav()
+                        }}
                         className={
                             route !== "/user" ? "nav-btn" : "nav-btn-selected"
                         }
@@ -90,7 +123,10 @@ export default function Sidenav() {
                         <span>Dashboard</span>
                     </div>
                     <div
-                        onClick={() => navigate("/user/complaint")}
+                        onClick={() => {
+                            navigate("/user/complaint")
+                            handleSideNav()
+                        }}
                         className={
                             route !== "/user/complaint"
                                 ? "nav-btn"
@@ -114,8 +150,7 @@ export default function Sidenav() {
                                 icon={faUser}
                             />
                             <div>
-                                <b>Leslie Nkem</b>
-                                <span>Staff</span>
+                                <b>Logout</b>
                             </div>
                         </div>
                     </div>
@@ -124,13 +159,20 @@ export default function Sidenav() {
         )
     }
     return (
-        <div className="Sidenav">
+        <div id="Sidenav" className="Sidenav">
             <div className="sidenav-cont">
-                <img
-                    className="logo"
-                    src="/images/white-sidenav-logo.svg"
-                    alt="logo"
-                />
+                <div className="logo-close">
+                    <img
+                        className="logo"
+                        src="/images/white-sidenav-logo.svg"
+                        alt="logo"
+                    />
+                    <FontAwesomeIcon
+                        className="nav-close"
+                        onClick={handleSideNav}
+                        icon={faTimes}
+                    />
+                </div>
                 <div
                     className={
                         route !== "/user" ? "nav-btn" : "nav-btn-selected"
@@ -160,8 +202,7 @@ export default function Sidenav() {
                     >
                         <FontAwesomeIcon className="user-icon" icon={faUser} />
                         <div>
-                            <b>Leslie Nkem</b>
-                            <span>Staff</span>
+                            <b>Logout</b>
                         </div>
                     </div>
                 </div>

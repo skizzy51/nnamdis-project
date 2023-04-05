@@ -207,3 +207,57 @@
         }
     }
 }
+
+@media (max-width: 950px) {
+    .Complaint-page {
+        padding: 0;
+        height: auto;
+
+        .header {
+            & h1 {
+                font-size: 1.2rem;
+                margin-left: 0.5rem;
+            }
+            & button {
+                margin-right: 0.5rem;
+            }
+        }
+        .section-1 {
+            flex-direction: column;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            .inputs {
+                width: 100%;
+            }
+        }
+        .section-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .section-3 {
+            flex-direction: column;
+            gap: 10px 0;
+            .btn-cont {
+                gap: 0 1rem;
+            }
+        }
+        .section-4 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            & div {
+                height: 10rem;
+                & span {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        .footer {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            & textarea {
+                flex-grow: unset;
+                height: 10rem;
+            }
+        }
+    }
+}

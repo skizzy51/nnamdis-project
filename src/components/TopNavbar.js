@@ -1,4 +1,4 @@
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
@@ -20,9 +20,19 @@ export default function TopNavbar() {
         }
     }, [route, staff])
 
+    function handleSideNav() {
+        let sidenav = document.getElementById("Sidenav")
+        sidenav.style.display = "block"
+    }
+
     return (
         <div className="Topnav">
             <div className="topnav-cont">
+                <FontAwesomeIcon
+                    onClick={handleSideNav}
+                    className="nav-control"
+                    icon={faBars}
+                />
                 <h2>{header}</h2>
 
                 <input placeholder="search dashboard..." />

@@ -1,8 +1,21 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../../styles/StudentHomePage.scss"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 
 export default function StudentHomePage() {
+    function openSidenav() {
+        let sidenav = document.getElementById("Sidenav")
+        sidenav.style.display = "block"
+    }
     return (
         <div className="StudentHomePage">
+            <div className="sidenav-open">
+                <FontAwesomeIcon
+                    onClick={openSidenav}
+                    icon={faBars}
+                    className="btn"
+                />
+            </div>
             <div className="home-cont">
                 <div className="hero">
                     <div className="hero-top">

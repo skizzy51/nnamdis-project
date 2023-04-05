@@ -105,7 +105,7 @@ export default function StaffHomePage() {
                             <span></span>
                         </div>
                         <div className="section-cont">
-                            {complaints.map((complaint) => {
+                            {complaints?.map((complaint) => {
                                 return (
                                     <Complaint
                                         key={complaint._id}

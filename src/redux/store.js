@@ -16,6 +16,7 @@ const persistConfig = {
         "sidebar",
         "loading",
         "studentComplaints",
+        "complaints",
     ],
 }
 

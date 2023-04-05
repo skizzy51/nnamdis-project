@@ -24,6 +24,7 @@
                 font-weight: 800;
             }
             .login-cont {
+                z-index: 10;
                 width: 7rem;
                 position: relative;
                 .login {
@@ -42,6 +43,7 @@
                     }
                 }
                 .login-modal {
+                    z-index: 10;
                     position: absolute;
                     top: 100%;
                     left: 0;
@@ -61,6 +63,29 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Nav {
+        height: unset;
+        .nav-cont {
+            padding: 15px 1rem;
+
+            & img {
+                width: clamp(5rem, 25vw, 8rem);
+            }
+            .end {
+                gap: 0 clamp(10px, 5vw, 20px);
+
+                & b {
+                    font-size: 0.9rem;
+                }
+                .login-cont {
+                    width: 5rem;
                 }
             }
         }

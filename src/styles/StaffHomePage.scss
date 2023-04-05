@@ -116,17 +116,43 @@
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
-                                gap: 0 10px;
+                                gap: 0 5%;
                                 background-color: #ffd700;
                                 color: white;
                                 height: 60%;
-                                flex: 0.7;
+                                flex: 0.9;
                                 transition: background-color 0.3s ease-in-out;
                                 &:hover {
                                     background-color: #a18900;
                                 }
                                 & span {
                                     flex-shrink: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .StaffHomePage {
+        width: 100dvw;
+
+        .staffMain {
+            overflow-x: auto;
+            .complaints-section {
+                overflow-x: scroll;
+                overflow-y: hidden;
+                width: max-content;
+                .section-cont {
+                    .complaint {
+                        & div {
+                            &:nth-child(6) {
+                                & div {
+                                    flex: 0.95;
                                 }
                             }
                         }

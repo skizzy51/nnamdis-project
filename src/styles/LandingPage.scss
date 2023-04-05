@@ -50,6 +50,7 @@
                 left: 105%;
                 background-color: rgba(103, 80, 164, 0.08);
                 width: 8rem;
+                z-index: 1;
                 & div {
                     display: flex;
                     flex-direction: column;
@@ -73,6 +74,24 @@
         right: 0;
         & img {
             width: 60vw;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Landing {
+        .hero {
+            top: 20vh;
+            max-width: 90vw;
+
+            & h1 {
+                font-size: 2rem;
+                line-height: unset;
+            }
+            & p {
+                font-size: 1.2rem;
+                width: 90%;
+            }
         }
     }
 }

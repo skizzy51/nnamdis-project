@@ -1,4 +1,5 @@
 import {
+    faBars,
     faChevronLeft,
     faChevronRight,
     faCircle,
@@ -104,6 +105,11 @@ export default function StudentComplaintPage() {
         setEditMode(true)
     }
 
+    function openSidenav() {
+        let sidenav = document.getElementById("Sidenav")
+        sidenav.style.display = "block"
+    }
+
     return (
         <div className="StudentComplaintPage">
             {done ? (
@@ -111,6 +117,13 @@ export default function StudentComplaintPage() {
                     <img src="/images/done.png" alt="" />
                 </div>
             ) : null}
+            <div className="sidenav-open">
+                <FontAwesomeIcon
+                    onClick={openSidenav}
+                    icon={faBars}
+                    className="btn"
+                />
+            </div>
             <div className="complaint-cont">
                 <div className="content">
                     <div className="hero">

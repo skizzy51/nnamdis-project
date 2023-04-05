@@ -1,6 +1,4 @@
 import {
-    faArrowRightLong,
-    faCircle,
     faFileInvoice,
     faPersonChalkboard,
     faUsers,
@@ -11,7 +9,6 @@ import { Calendar } from "react-calendar"
 import TopNavbar from "../../components/TopNavbar"
 import "../../styles/AdminHomePage.scss"
 import "react-calendar/dist/Calendar.css"
-import Chart from "react-google-charts"
 
 export default function AdminHomePage() {
     const [date, setDate] = useState(new Date())
@@ -59,7 +56,7 @@ export default function AdminHomePage() {
                     <Calendar value={date} onChange={setDate} />
                 </div>
             </div>
-            <div className="recent-activity">
+            {/* <div className="recent-activity">
                 <div className="top">
                     <h2>Recent Activity</h2>
                     <button>
@@ -112,7 +109,7 @@ export default function AdminHomePage() {
                         <span>28th of April, 2022</span>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
